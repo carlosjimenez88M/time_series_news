@@ -1,0 +1,13 @@
+name: colombia_data_pipeline
+
+python_env: python_env.yaml
+
+entry_points:
+  trm_pipeline:
+    command: "python3 TRM/main.py"
+    
+  news_pipeline:
+    command: "python3 News/main.py"
+    
+  full_pipeline:
+    command: "python3 -c 'import subprocess; subprocess.run([\"python\", \"TRM/main.py\"]); subprocess.run([\"python\", \"News/main.py\"])'"
